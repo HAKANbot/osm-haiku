@@ -43,7 +43,7 @@ window.lines = [
     condition: (el, env) => env.moment === 'afternoon',
   },
   {
-    template: ['The day is young', 'The air still crisp', 'Good morning', 'Sad morning'],
+    template: ['The day is young', 'The air still crisp', 'Good morning', 'Sad morning', 'Blinking awake'],
     condition: (el, env) => env.moment === 'morning',
   },
   {
@@ -54,36 +54,37 @@ window.lines = [
       `Life in ${el.name}`,
       `Feeling good in ${el.name}`,
       `Today in ${el.name}`,
+      `Leaving my baby in ${el.name}`,
     ][Math.floor(Math.random() * 6)],
     tags: [['admin_level', '4'], ['admin_level', '5'],  ['admin_level', '6'], ['boundary', 'political']],
     needsName: true
   },
   {
-    template: ['Your reflection', 'Water like glass', 'Floating there', 'Quiet water', 'On the water\'s surface'],
+    template: ['Your reflection', 'Water like glass', 'Floating there', 'Quiet water', 'On the water\'s surface', 'One lonely boat'],
     tags: [['waterway', 'canal'], ['waterway', 'river'], ['natural', 'water'], ['water', 'river']]
   },
   {
-    template: ['Frostbite', 'It\'s freezing', 'So cold'],
+    template: ['Frostbite', 'It\'s freezing', 'So cold', 'Ice on my eyelashes'],
     condition: (el, env) => env.temperature < 0,
   },
   {
-    template: ['Cold bites', 'Quite chilly'],
+    template: ['Cold bites', 'Quite chilly', 'Breath like fog'],
     condition: (el, env) => env.temperature < 10,
   },
   {
-    template: ['Quite warm here'],
+    template: ['Quite warm here', 'No sweater needed'],
     condition: (el, env) => env.temperature > 20,
   },
   {
-    template: ['It is very hot.', 'A drop of sweat'],
+    template: ['It is very hot.', 'A drop of sweat', 'Hell is cooler'],
     condition: (el, env) => env.temperature > 30,
   },
   {
-    template: ['Into sunshine', 'The sun scatters', 'Toward the sun', 'A ray of sunlight', 'With sunlight', 'The sun strikes', 'Sun is shining'],
+    template: ['Into sunshine', 'The sun scatters', 'Toward the sun', 'A ray of sunlight', 'With sunlight', 'The sun strikes', 'Sun is shining', 'Blue sky yellow sun'],
     condition: (el, env) => (env.weatherConditions.clear && env.moment !== 'night'),
   },
   {
-    template: ['Wet to the bone', 'Rain on the road like a mirror', 'Soaked pants', 'Pouring rain', 'Rain drops', 'A dark rain'],
+    template: ['Wet to the bone', 'Rain on the road like a mirror', 'Soaked pants', 'Pouring rain', 'Rain drops', 'A dark rain', 'Forgotten umbrella'],
     condition: (el, env) => env.weatherConditions.rain || env.weatherConditions.drizzle,
   },
   {
@@ -91,17 +92,17 @@ window.lines = [
     tags: [['amenity','library'], ['shop', 'books']],
   },
   {
-    template: ['Yawns in the classroom', 'A day of learning starts'],
+    template: ['Yawns in the classroom', 'A day of learning starts', 'Minds blink awake'],
     tags: [['amenity','university'],['amenity','school']],
     condition: (el, env) => env.moment === 'morning',
   },
   {
-    template: ['Those kids would rather be outside', 'Another depressed teacher'],
+    template: ['Those kids would rather be outside', 'Another depressed teacher', 'Trudge toward homework'],
     tags: [['amenity','school']],
     condition: (el, env) => env.moment === 'afternoon',
   },
   {
-    template: ['No one sends letters anymore', 'Where are those letters going to?', 'To whom it may concern', 'Dear you', 'A love letter'],
+    template: ['No one sends letters anymore', 'Where are those letters going to?', 'To whom it may concern', 'Dear you', 'A love letter', 'Lost in the mail'],
     tags: [['amenity','post_box']]
   },
   {
@@ -113,7 +114,7 @@ window.lines = [
     tags: [['route','ferry']]
   },
   {
-    template: ['A couple getting a loan', 'A couple getting a mortgage'],
+    template: ['A couple getting a loan', 'A couple getting a mortgage', 'Withdrawing every last cent'],
     tags: [['amenity','bank']],
     condition: (el, env) => env.moment === 'morning',
   },
@@ -122,7 +123,7 @@ window.lines = [
     tags: [['amenity','bank'], ['amenity', 'atm']]
   },
   {
-    template: ['A supermarket hustle and bustle', 'Salad cabbage and carrots', 'The cashier\'s bored', 'A lonely aisle', 'Under the neon', 'Fresh produce'],
+    template: ['A supermarket hustle and bustle', 'Salad cabbage and carrots', 'The cashier\'s bored', 'A lonely aisle', 'Under the neon', 'Fresh produce', 'Forgot why I came'],
     tags: [['shop', 'supermarket']]
   },
   {
@@ -146,7 +147,7 @@ window.lines = [
     tags: [['shop', 'butcher']]
   },
   {
-    template: ['Short around the ears?', 'Snip snip snip', 'Start with the shampoo', 'Just a little trim to tidy it up', 'Just a little bit shorter', 'Hairdresser on fire'],
+    template: ['Short around the ears?', 'Snip snip snip', 'Start with the shampoo', 'Just a little trim to tidy it up', 'Just a little bit shorter', 'Hairdresser on fire', 'Gossip while he snips'],
     tags: [['shop', 'hairdresser']]
   },
   {
@@ -165,20 +166,21 @@ window.lines = [
       `Full bellies at ${el.name}`,
       `A bite in ${el.name} in the ${env.moment}?`,
       `Not too crowded in ${el.name}`,
+      `Waiting for a table at ${el.name}`,
     ][Math.floor(Math.random()*4)],
     tags: [['amenity', 'restaurant']],
     needsName: true
   },
   {
-    template: ['You are what you eat', 'Coming hot'],
+    template: ['You are what you eat', 'Coming hot', 'The menu full of promises'],
     tags: [['amenity', 'restaurant']]
   },
   {
-    template: ['I need a coffee', 'Coffee smells good', 'Sipping her coffee', 'The same pot of coffee', 'The coffeecup still warm'],
+    template: ['I need a coffee', 'Coffee smells good', 'Sipping her coffee', 'The same pot of coffee', 'The coffeecup still warm', 'The second sip wakes me'],
     tags: [['amenity', 'cafe'], ['cuisine', 'coffee_shop']]
   },
   {
-    template: ['The bottle is empty', 'She drank', 'The waitress serves', 'The burn of the whiskey', 'Five fingers of scotch', 'In my beer', 'Bitter wine', 'I\'m a drunk'],
+    template: ['The bottle is empty', 'She drank', 'The waitress serves', 'The burn of the whiskey', 'Five fingers of scotch', 'In my beer', 'Bitter wine', 'I\'m a drunk', 'Drink drank drunk', 'Tell me about your IPAs'],
     tags: [['amenity', 'bar'], ['amenity', 'pub']]
   },
   {
@@ -192,11 +194,11 @@ window.lines = [
     needsName: true
   },
   {
-    template: ['Pineapple on pizzas ?', 'I don\'t eat the pizza crust', 'High on wheat and cheese', 'Pepperoni and cheese', 'The faint memory of Napoli', 'Hot calzone'],
+    template: ['Pineapple on pizzas ?', 'I don\'t eat the pizza crust', 'High on wheat and cheese', 'Pepperoni and cheese', 'The faint memory of Napoli', 'Hot calzone', 'Greasy but good'],
     tags: [['cuisine', 'pizza']]
   },
   {
-    template: ['Smells garlic', 'Buon appetito'],
+    template: ['Smells garlic', 'Buon appetito', 'Red wine and white tablecloths'],
     tags: [['cuisine', 'italian']]
   },
   {
@@ -204,15 +206,15 @@ window.lines = [
     tags: [['cuisine', 'burger']]
   },
   {
-    template: ['Spring roll', 'Dim sum', 'A lonely noodle', 'A century old egg'],
+    template: ['Spring roll', 'Dim sum', 'A lonely noodle', 'A century old egg', 'Steaming xiao long bao'],
     tags: [['cuisine', 'chinese']]
   },
   {
-    template: ['A plate of sushi', 'Ginger and wasabi', 'Sake to wash it down'],
+    template: ['A plate of sushi', 'Ginger and wasabi', 'Sake to wash it down', 'Get the omakase'],
     tags: [['cuisine', 'japanese']]
   },
   {
-    template: ['Hot jalapeños', 'Mexico in my heart'],
+    template: ['Hot jalapeños', 'Mexico in my heart', 'Tacos de lengua'],
     tags: [['cuisine', 'mexican']]
   },
   {
@@ -224,12 +226,12 @@ window.lines = [
     tags: [['shop','shoes']]
   },
   {
-    template: 'Heat on the pavement stones',
+    template: ['Heat on the pavement stones', 'The sidewalk sizzles']
     tags: [['surface', 'paving_stones']],
     condition: (el, env) => env.temperature > 20
   },
   {
-    template: ['A greasy smell', 'Sad soft fries', 'Deep fried'],
+    template: ['A greasy smell', 'Sad soft fries', 'Deep fried', 'The comfort of comfort food'],
     tags: [['amenity', 'fast_food']]
   },
   {
@@ -242,11 +244,11 @@ window.lines = [
     tags: [['recycling:glass', 'true']],
   },
   {
-    template: 'Commuting back home',
+    template: ['Commuting back home', 'Swipe your card to pay', 'Suits bustling downstairs']
     tags: [['subway', 'yes'], ['railway', 'subway_entrance']]
   },
   {
-    template: ['Should we take the metro?', 'Warm air from the subway entrance'],
+    template: ['Should we take the metro?', 'Warm air from the subway entrance', 'Commuting crowds emerge'],
     tags: [['railway', 'subway_entrance']]
   },
   {
@@ -255,22 +257,22 @@ window.lines = [
     condition: (el, env) => env.moment === 'morning'
   },
   {
-    template: 'Someone has cut in line at the theater',
+    template: ['Someone has cut in line at the theater', 'Scalpers hawking tickets'],
     tags: [['amenity', 'theatre']],
     condition: (el, env) => env.moment === 'evening'
   },
   {
-    template: 'Is it too early for a beer?',
+    template: ['Is it too early for a beer?', 'Hair of the dog']
     tags: [['amenity', 'pub']],
     condition: (el, env) => env.moment === 'morning'
   },
   {
-    template: ['The tourists are already sleeping'],
+    template: ['The tourists are already sleeping', 'I kissed the bellboy'],
     tags: [['tourism', 'hotel']],
     condition: (el, env) => env.moment === 'evening'
   },
   {
-    template: ['Against the hotel windows', 'The desk clerk', 'Cockroach scurries', `Room ${Math.floor(Math.random() * 100)}`],
+    template: ['Against the hotel windows', 'The desk clerk', 'No one stays here long', 'Cockroach scurries', `Room ${Math.floor(Math.random() * 100)}`],
     tags: [['tourism', 'hotel']]
   },
   {
@@ -284,11 +286,11 @@ window.lines = [
     condition: (el, env) => new Date().getDay() >= 6 && env.moment === 'morning'
   },
   {
-    template: ['In the garage', 'In the garage where I belong'],
+    template: ['In the garage', 'In the garage where I belong', 'Cars and tools hibernate'],
     tags: [['building', 'garage']]
   },
   {
-    template: ['A skyscraper', 'A skyscraper towers above the city', 'Reaching the sky'],
+    template: ['A skyscraper', 'A skyscraper towers above the city', 'Reaching the sky', 'The lie of authority',],
     tags: [['building:levels', '*']],
     condition: (el) => parseInt(el.tags['building:levels']) >= 20
   },
@@ -328,15 +330,15 @@ window.lines = [
     tags: [['footway', 'crossing'], ['highway', 'crossing']],
   },
   {
-    template: 'A hero remembered',
+    template: ['A hero remembered', 'The lies of history'],
     tags: [['historic', 'memorial'], ['historic', 'monumet']],
   },
   {
-    template: ['Green. Red. Green. Red.', 'Traffic light goes red'],
+    template: ['Green. Red. Green. Red.', 'Traffic light goes red', 'Impatient motors idle'],
     tags: [['highway', 'traffic_signals']],
   },
   {
-    template: ['Onto the highway', 'A truck shifting gears', 'Busy highway', 'Above the freeway noise', 'A passing car'],
+    template: ['Onto the highway', 'A truck shifting gears', 'Busy highway', 'Above the freeway noise', 'A passing car', 'Grumbling traffic'],
     tags: [['highway', 'motorway']],
   },
   {
@@ -349,7 +351,7 @@ window.lines = [
     condition: (el, env) => env.moment === 'night'
   },
   {
-    template: 'A train underneath',
+    template: ['A train underneath', 'Hot trains rumble'],
     tags: [['subway', 'route']],
   },
   {
@@ -366,11 +368,11 @@ window.lines = [
     needsName: true,
   },
   {
-    template: ['The grass is green', 'A walk in the park', 'A bird in the tree'],
+    template: ['The grass is green', 'A walk in the park', 'A bird in the tree', 'Picnic on the grass'],
     tags: [['leisure', 'park']],
   },
   {
-    template: 'Late night stroll',
+    template: ['Late night stroll', 'Stay close to streetlights'],
     tags: [['leisure', 'park']],
     condition: (el, env) => env.moment === 'night',
   },
@@ -383,7 +385,7 @@ window.lines = [
     tags: [['natural', 'coastline']],
   },
   {
-    template: ['A vacant lot', 'In this empty place', 'This is a wasteland'],
+    template: ['A vacant lot', 'In this empty place', 'This is a wasteland', 'Nature reclaims its own'],
     tags: [['landuse', 'brownfield']],
   },
   {
@@ -391,7 +393,7 @@ window.lines = [
     tags: [['landuse', 'cemetery'], ['amenity', 'grave_yard']]
   },
   {
-    template: ['This is spooky', 'Something evil\'s lurking from the dark', 'Thriller night'],
+    template: ['This is spooky', 'Something evil\'s lurking from the dark', 'Thriller night', 'Even the ghosts are asleep'],
     tags: [['landuse', 'cemetery'], ['amenity', 'grave_yard']],
     condition: (el, env) => env.moment === 'night'
   },
@@ -408,7 +410,7 @@ window.lines = [
     tags: [['landuse', 'railway']]
   },
   {
-    template: ['Two children', 'Chasing laughter', 'Children playing'],
+    template: ['Two children', 'Chasing laughter', 'Children playing', 'Empty swings'],
     tags: [['landuse', 'recreation_ground']]
   },
   {
@@ -420,7 +422,7 @@ window.lines = [
     tags: [['barrier', 'fence']]
   },
   {
-    template: ['Learn your lesson','The teacher asks the kids', 'On the school wall', 'A student writing', 'By the school gate'],
+    template: ['That lunchbox smell', 'Learn your lesson','The teacher asks the kids', 'On the school wall', 'A student writing', 'By the school gate'],
     tags: [['amenity', 'school']],
   },
   {
@@ -428,7 +430,7 @@ window.lines = [
     tags: [['amenity', 'parking']],
   },
   {
-    template: ['Bikes like metal skeletons', 'Locked wheels', 'Lots of bikes', 'That bike is missing a wheel'],
+    template: ['Bikes like metal skeletons', 'Locked wheels', 'Lots of bikes', 'That bike is missing a wheel', 'Cut the locks'],
     tags: [['amenity', 'bicycle_parking']],
   },
   {
@@ -448,7 +450,7 @@ window.lines = [
     tags: [['amenity', 'hospital']]
   },
   {
-    template: ['Night shift starts'],
+    template: ['Night shift starts', 'Lit by sirens'],
     tags: [['amenity', 'hospital']],
     condition: (el, env) => env.moment === 'evening'
   },
@@ -457,7 +459,7 @@ window.lines = [
     tags: [['amenity', 'police']]
   },
   {
-    template: ['Will someone answer the phone?', 'Insert more coins'],
+    template: ['Will someone answer the phone?', 'Insert more coins', 'Calling her collect'],
     tags: [['amenity', 'telephone']],
   },
   {
@@ -465,7 +467,7 @@ window.lines = [
     tags: [['amenity', 'fuel']],
   },
   {
-    template: ['Overflowing bin', 'Going to waste', 'A bad smell', 'Flies and maggots'],
+    template: ['Overflowing bin', 'Going to waste', 'A bad smell', 'Flies and maggots', 'No recycling'],
     tags: [['amenity', 'waste_basket']],
   },
   {
